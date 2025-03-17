@@ -17,6 +17,22 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@takram/three-3d-tiles-support": ["packages/3d-tiles/src/index.ts"],
+      "@takram/three-atmosphere/shaders": [
+        "packages/atmosphere/src/shaders/index.ts"
+      ],
+      "@takram/three-geospatial-worker": ["packages/worker/src/index.ts"],
+      "@takram/three-geospatial/r3f": ["packages/core/src/r3f/index.ts"],
+      "@takram/three-geospatial/shaders": [
+        "packages/core/src/shaders/index.ts"
+      ],
+      "@takram/three-terrain": ["packages/terrain/src/index.ts"],
+      "@takram/three-terrain-core": ["packages/terrain-core/src/index.ts"],
+      "@takram/three-terrain/r3f": ["packages/terrain/src/r3f/index.ts"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

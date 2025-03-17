@@ -216,6 +216,8 @@ interface SceneProps extends LocalDateControlsParams {
   pitch?: number
   distance?: number
   coverage?: number
+  dayOfYear?: number
+  timeOfDay?: number
 }
 
 const Scene: FC<SceneProps> = ({
@@ -375,7 +377,7 @@ export const GeospatialMap: FC<GeospatialMapProps> = ({ city = 'tokyo', ...custo
             target='_blank'
             rel='noreferrer'
             style={{ color: 'inherit' }}
-          >
+          > 
             Google Maps API key
           </a>{' '}
           at the top right of this screen, or check back tomorrow.
