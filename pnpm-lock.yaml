@@ -17,6 +17,9 @@ importers:
       '@react-three/postprocessing':
         specifier: ^2.16.2
         version: 2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0)
+      '@takram/three-geospatial':
+        specifier: ^0.2.0
+        version: 0.2.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)
       next:
         specifier: 14.2.2
         version: 14.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -29,7 +32,13 @@ importers:
       three:
         specifier: ^0.163.0
         version: 0.163.0
+      three-stdlib:
+        specifier: ^2.35.14
+        version: 2.35.14(three@0.163.0)
     devDependencies:
+      3d-tiles-renderer:
+        specifier: ^0.4.7
+        version: 0.4.7(@react-three/drei@9.122.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.18)(@types/three@0.174.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)(use-sync-external-store@1.4.0(react@18.3.1)))(@types/react@18.3.18)(@types/three@0.174.0)(three@0.163.0)
       '@types/node':
         specifier: ^20
         version: 20.17.24
@@ -45,6 +54,9 @@ importers:
       eslint-config-next:
         specifier: 14.2.2
         version: 14.2.2(eslint@8.57.1)(typescript@5.8.2)
+      jotai:
+        specifier: ^2.12.2
+        version: 2.12.2(@types/react@18.3.18)(react@18.3.1)
       postcss:
         specifier: ^8
         version: 8.5.3
@@ -56,6 +68,11 @@ importers:
         version: 5.8.2
 
 packages:
+
+  3d-tiles-renderer@0.4.7:
+    resolution: {integrity: sha512-jGdtHh0VtY4iMm7ZohYnYcwG9aPcRe2UsdG7tdGj6J6kH4JyWzyxlTyDSrDtwkgVZf5/CEO0QXl/dXBNuayuJA==}
+    peerDependencies:
+      three: '>=0.166.0'
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -269,6 +286,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@petamoriken/float16@3.9.2':
+    resolution: {integrity: sha512-VgffxawQde93xKxT3qap3OH+meZf7VaSB5Sqd4Rqc+FP5alWbpOyan/7tRbOAvynjpG3GpdtAuGU/NdhQpmrog==}
+
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -355,6 +375,62 @@ packages:
 
   '@swc/helpers@0.5.5':
     resolution: {integrity: sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==}
+
+  '@takram/three-atmosphere@0.6.0':
+    resolution: {integrity: sha512-UVLhexKdlM90t9s9BXaA5CKAsNxayD+/BuVPRse+XCpOLJIY416RME7RxKaki6XqkKvbvDoiEMQGA6OGbIsFTg==}
+    peerDependencies:
+      '@react-three/drei': '>=9.117.3'
+      '@react-three/fiber': '>=8.17.10'
+      '@react-three/postprocessing': '>=2.16.3'
+      postprocessing: '>=6.36.4'
+      react: '>=18.0'
+      three: '>=0.170.0'
+    peerDependenciesMeta:
+      '@react-three/drei':
+        optional: true
+      '@react-three/fiber':
+        optional: true
+      '@react-three/postprocessing':
+        optional: true
+      react:
+        optional: true
+
+  '@takram/three-geospatial-effects@0.0.1-alpha.9':
+    resolution: {integrity: sha512-AfmUcr9NNB9LCoPYq1xHUBGQLcfRUJWdrUtb/5r8+SS26/BXLZjA5tR0K8nuf02a+S9KdjWXimh6UHYEu15Yxw==}
+    peerDependencies:
+      '@react-three/fiber': '>=8.17.10'
+      '@react-three/postprocessing': '>=2.16.3'
+      postprocessing: '>=6.36.4'
+      react: '>=18.0'
+      three: '>=0.170.0'
+    peerDependenciesMeta:
+      '@react-three/fiber':
+        optional: true
+      '@react-three/postprocessing':
+        optional: true
+      react:
+        optional: true
+
+  '@takram/three-geospatial@0.0.1-alpha.5':
+    resolution: {integrity: sha512-GR9h9kjPfZ4BDB6QT3xX+K+dja+Fw+ln35ofBli57GmD1bQ0nzlUbRnsMJk3IfIWl/KtYEuPEgNOhkYR+OAXzg==}
+    peerDependencies:
+      '@react-three/fiber': '>=8.17.10'
+      react: '>=18.0'
+      three: '>=0.170.0'
+
+  '@takram/three-geospatial@0.0.1-alpha.9':
+    resolution: {integrity: sha512-0/KGV1ZTIO0/iJOpWXpx5wFEeAqoMUDwMuE5kL1OzSf+COFviGvqtgZlqia95kAzlZSNXQoeEGg4IlvOVdw3Aw==}
+    peerDependencies:
+      '@react-three/fiber': '>=8.17.10'
+      react: '>=18.0'
+      three: '>=0.170.0'
+
+  '@takram/three-geospatial@0.2.0':
+    resolution: {integrity: sha512-PiHh4wq1E7y97q5qZVMkSwzjkf/3uV3wCwKuOrCsWD3KyrNZHRcIYdT/5WpmLLmUjpMcQY3YKMpEbu9Ep62mbg==}
+    peerDependencies:
+      '@react-three/fiber': '>=9.0.4'
+      react: '>=19.0'
+      three: '>=0.170.0'
 
   '@tweenjs/tween.js@23.1.3':
     resolution: {integrity: sha512-vJmvvwFxYuGnF2axRtPYocag6Clbb5YS7kLL+SO/TeVFzHqDIWrNKYtcsPMibjDx9O+bu+psAy9NKfWklassUA==}
@@ -531,6 +607,9 @@ packages:
 
   ast-types-flow@0.0.8:
     resolution: {integrity: sha512-OH/2E5Fg20h2aPrbe+QL8JZQFko0YZaF+j4mnQ7BGhfavO7OpSLa8a0y9sBwomHdSbkhTS8TQNayBfnW5DwbvQ==}
+
+  astronomy-engine@2.1.19:
+    resolution: {integrity: sha512-8yWKNf7UeNbH458h3sAJ6ZgAjE5jTXp/mNNRFoC20j2SHwZIjAQeEsBB2Q3uCFRaTCCJRv33K2XhkhZQMXoX6w==}
 
   async-function@1.0.0:
     resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
@@ -1207,6 +1286,18 @@ packages:
     resolution: {integrity: sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==}
     hasBin: true
 
+  jotai@2.12.2:
+    resolution: {integrity: sha512-oN8715y7MkjXlSrpyjlR887TOuc/NLZMs9gvgtfWH/JP47ChwO0lR2ijSwBvPMYyXRAPT+liIAhuBavluKGgtA==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=17.0.0'
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -1258,6 +1349,9 @@ packages:
   locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
+
+  lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
 
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -1555,6 +1649,9 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
+  react-merge-refs@2.1.1:
+    resolution: {integrity: sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==}
+
   react-reconciler@0.27.0:
     resolution: {integrity: sha512-HmMDKciQjYmBRGuuhIaKA1ba/7a+UsM5FzOZsMO2JYHt9Jh8reCb7j1eDC95NOyUlKM9KRyvdx0flBuDvYSBoA==}
     engines: {node: '>=0.10.0'}
@@ -1822,6 +1919,9 @@ packages:
   three@0.163.0:
     resolution: {integrity: sha512-HlMgCb2TF/dTLRtknBnjUTsR8FsDqBY43itYop2+Zg822I+Kd0Ua2vs8CvfBVefXkBdNDrLMoRTGCIIpfCuDew==}
 
+  tiny-invariant@1.3.3:
+    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
+
   tinyglobby@0.2.12:
     resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
     engines: {node: '>=12.0.0'}
@@ -1869,6 +1969,10 @@ packages:
     resolution: {integrity: sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==}
     engines: {node: '>=10'}
 
+  type-fest@4.37.0:
+    resolution: {integrity: sha512-S/5/0kFftkq27FPNye0XM1e2NsnoD/3FS+pBmbjmmtLT6I+i344KoOf7pvXreaFsDamWeaJX55nczA1m5PsBDg==}
+    engines: {node: '>=16'}
+
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
     engines: {node: '>= 0.4'}
@@ -1899,6 +2003,10 @@ packages:
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
+
+  url-join@5.0.0:
+    resolution: {integrity: sha512-n2huDr9h9yzd6exQVnH/jU5mr+Pfx08LRXXZhkLLetAMESRj+anQsTAh940iMrIetKAmry9coFuZQ2jY8/p3WA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   use-sync-external-store@1.4.0:
     resolution: {integrity: sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==}
@@ -2006,6 +2114,28 @@ packages:
         optional: true
 
 snapshots:
+
+  3d-tiles-renderer@0.4.7(@react-three/drei@9.122.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.18)(@types/three@0.174.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)(use-sync-external-store@1.4.0(react@18.3.1)))(@types/react@18.3.18)(@types/three@0.174.0)(three@0.163.0):
+    dependencies:
+      '@react-three/postprocessing': 2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0)
+      '@takram/three-atmosphere': 0.6.0(@react-three/drei@9.122.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.18)(@types/three@0.174.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)(use-sync-external-store@1.4.0(react@18.3.1)))(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@react-three/postprocessing@2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0))(postprocessing@6.37.1(three@0.163.0))(react@18.3.1)(three@0.163.0)
+      '@takram/three-geospatial': 0.0.1-alpha.9(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)
+      '@takram/three-geospatial-effects': 0.0.1-alpha.9(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@react-three/postprocessing@2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0))(postprocessing@6.37.1(three@0.163.0))(react@18.3.1)(three@0.163.0)
+      postprocessing: 6.37.1(three@0.163.0)
+      three: 0.163.0
+    optionalDependencies:
+      '@react-three/fiber': 8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    transitivePeerDependencies:
+      - '@react-three/drei'
+      - '@types/react'
+      - '@types/three'
+      - expo
+      - expo-asset
+      - expo-file-system
+      - expo-gl
+      - react-native
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -2186,6 +2316,8 @@ snapshots:
   '@oxc-resolver/binding-win32-x64-msvc@5.0.0':
     optional: true
 
+  '@petamoriken/float16@3.9.2': {}
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -2300,6 +2432,64 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
       tslib: 2.8.1
+
+  '@takram/three-atmosphere@0.6.0(@react-three/drei@9.122.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.18)(@types/three@0.174.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)(use-sync-external-store@1.4.0(react@18.3.1)))(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@react-three/postprocessing@2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0))(postprocessing@6.37.1(three@0.163.0))(react@18.3.1)(three@0.163.0)':
+    dependencies:
+      '@takram/three-geospatial': 0.0.1-alpha.5(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)
+      astronomy-engine: 2.1.19
+      postprocessing: 6.37.1(three@0.163.0)
+      react-merge-refs: 2.1.1
+      three: 0.163.0
+      tiny-invariant: 1.3.3
+      url-join: 5.0.0
+    optionalDependencies:
+      '@react-three/drei': 9.122.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.18)(@types/three@0.174.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)(use-sync-external-store@1.4.0(react@18.3.1))
+      '@react-three/fiber': 8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+      '@react-three/postprocessing': 2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0)
+      react: 18.3.1
+
+  '@takram/three-geospatial-effects@0.0.1-alpha.9(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@react-three/postprocessing@2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0))(postprocessing@6.37.1(three@0.163.0))(react@18.3.1)(three@0.163.0)':
+    dependencies:
+      '@takram/three-geospatial': 0.0.1-alpha.9(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)
+      n8ao: 1.9.4(postprocessing@6.37.1(three@0.163.0))(three@0.163.0)
+      postprocessing: 6.37.1(three@0.163.0)
+      three: 0.163.0
+    optionalDependencies:
+      '@react-three/fiber': 8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+      '@react-three/postprocessing': 2.19.1(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.174.0)(react@18.3.1)(three@0.163.0)
+      react: 18.3.1
+
+  '@takram/three-geospatial@0.0.1-alpha.5(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)':
+    dependencies:
+      '@react-three/fiber': 8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+      lodash-es: 4.17.21
+      react: 18.3.1
+      react-merge-refs: 2.1.1
+      three: 0.163.0
+      tiny-invariant: 1.3.3
+      type-fest: 4.37.0
+
+  '@takram/three-geospatial@0.0.1-alpha.9(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)':
+    dependencies:
+      '@petamoriken/float16': 3.9.2
+      '@react-three/fiber': 8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+      react: 18.3.1
+      react-merge-refs: 2.1.1
+      three: 0.163.0
+      three-stdlib: 2.35.14(three@0.163.0)
+      tiny-invariant: 1.3.3
+      type-fest: 4.37.0
+
+  '@takram/three-geospatial@0.2.0(@react-three/fiber@8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)':
+    dependencies:
+      '@petamoriken/float16': 3.9.2
+      '@react-three/fiber': 8.18.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+      react: 18.3.1
+      react-merge-refs: 2.1.1
+      three: 0.163.0
+      three-stdlib: 2.35.14(three@0.163.0)
+      tiny-invariant: 1.3.3
+      type-fest: 4.37.0
 
   '@tweenjs/tween.js@23.1.3': {}
 
@@ -2505,6 +2695,8 @@ snapshots:
       is-array-buffer: 3.0.5
 
   ast-types-flow@0.0.8: {}
+
+  astronomy-engine@2.1.19: {}
 
   async-function@1.0.0: {}
 
@@ -2802,7 +2994,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.9.0(eslint-plugin-import@2.31.0(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.9.0)(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.9.0(eslint-plugin-import@2.31.0(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.4(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@8.57.1)
@@ -2832,7 +3024,7 @@ snapshots:
       stable-hash: 0.0.5
       tinyglobby: 0.2.12
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.9.0)(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.9.0(eslint-plugin-import@2.31.0(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2847,7 +3039,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.9.0)(eslint@8.57.1):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.9.0(eslint-plugin-import@2.31.0(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -3354,6 +3546,11 @@ snapshots:
 
   jiti@1.21.7: {}
 
+  jotai@2.12.2(@types/react@18.3.18)(react@18.3.1):
+    optionalDependencies:
+      '@types/react': 18.3.18
+      react: 18.3.1
+
   js-tokens@4.0.0: {}
 
   js-yaml@4.1.0:
@@ -3403,6 +3600,8 @@ snapshots:
   locate-path@6.0.0:
     dependencies:
       p-locate: 5.0.0
+
+  lodash-es@4.17.21: {}
 
   lodash.merge@4.6.2: {}
 
@@ -3693,6 +3892,8 @@ snapshots:
       scheduler: 0.23.2
 
   react-is@16.13.1: {}
+
+  react-merge-refs@2.1.1: {}
 
   react-reconciler@0.27.0(react@18.3.1):
     dependencies:
@@ -4024,6 +4225,8 @@ snapshots:
 
   three@0.163.0: {}
 
+  tiny-invariant@1.3.3: {}
+
   tinyglobby@0.2.12:
     dependencies:
       fdir: 6.4.3(picomatch@4.0.2)
@@ -4076,6 +4279,8 @@ snapshots:
 
   type-fest@0.20.2: {}
 
+  type-fest@4.37.0: {}
+
   typed-array-buffer@1.0.3:
     dependencies:
       call-bound: 1.0.4
@@ -4123,6 +4328,8 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  url-join@5.0.0: {}
 
   use-sync-external-store@1.4.0(react@18.3.1):
     dependencies:

@@ -1,3 +1,71 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"]
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.*?.json"]
+      },
+      "extends": ["love", "prettier"],
+      "rules": {
+        // It's not harmful. Empty interfaces have purposes.
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-empty-function": "off",
+
+        // It's not so harmful to coarse values to strings, especially inside
+        // template strings from which we often construct messages.
+        "@typescript-eslint/restrict-template-expressions": "off",
+
+        // Triple slash reference has a different purpose.
+        "@typescript-eslint/triple-slash-reference": "off",
+
+        // Too many false positives.
+        "@typescript-eslint/no-unsafe-argument": "off",
+
+        // Too many false positives. `T extends any` is totally type-safe when
+        // used in type constraints.
+        "@typescript-eslint/no-explicit-any": "off",
+
+        // {} is semantically different from `object` and `Record`.
+        "@typescript-eslint/ban-types": "off",
+
+        // Exclude /*#__PURE__*/ annotation.
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "line": {
+              "markers": ["/"]
+            },
+            "block": {
+              "exceptions": ["#__PURE__"]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["love", "prettier"],
+      "rules": {
+        // Exclude /*#__PURE__*/ annotation.
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "line": {
+              "markers": ["/"]
+            },
+            "block": {
+              "exceptions": ["#__PURE__"]
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
